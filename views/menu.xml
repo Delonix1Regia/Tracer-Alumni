@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <menuitem id="tracer_alumni_root" name="Tracer Alumni" sequence="10" web_icon="tracer_alumni,static/description/icon.png"/>
+        <menuitem id="menu_pengguna" name="Pengguna" parent="tracer_alumni_root" action="action_pengguna" sequence="10"/>
+        <menuitem id="menu_prodi" name="Program Studi" parent="tracer_alumni_root" action="action_prodi" sequence="20"/>
+        <menuitem id="menu_fakultas" name="Fakultas" parent="tracer_alumni_root" action="action_fakultas" sequence="30"/>
+        <menuitem id="menu_agama" name="Agama" parent="tracer_alumni_root" action="action_agama" sequence="40"/>
+    </data>
+</odoo>

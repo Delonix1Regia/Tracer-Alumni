@@ -1,0 +1,69 @@
+<odoo>
+    <!-- Action for Agama -->
+    <record id="action_agama" model="ir.actions.act_window">
+        <field name="name">Agama</field>
+        <field name="res_model">tracer_alumni.agama</field>
+        <field name="view_mode">kanban,tree,form,graph</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create the first Agama
+            </p>
+        </field>
+    </record>
+
+    <!-- Tree View for Agama -->
+    <record id="view_agama_tree" model="ir.ui.view">
+        <field name="name">agama.tree</field>
+        <field name="model">tracer_alumni.agama</field>
+        <field name="arch" type="xml">
+            <tree string="Agama">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View for Agama -->
+    <record id="view_agama_form" model="ir.ui.view">
+        <field name="name">agama.form</field>
+        <field name="model">tracer_alumni.agama</field>
+        <field name="arch" type="xml">
+            <form string="Agama">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+        <!-- Kanban view for agama -->
+        <record id="view_agama_kanban" model="ir.ui.view">
+            <field name="name">agama.kanban</field>
+            <field name="model">tracer_alumni.agama</field>
+            <field name="arch" type="xml">
+                <kanban string="Program Studi">
+                    <field name="name"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <strong><field name="name"/></strong>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+                <!-- Graph view for agama -->
+        <record id="view_agama_graph" model="ir.ui.view">
+            <field name="name">agama.graph</field>
+            <field name="model">tracer_alumni.agama</field>
+            <field name="arch" type="xml">
+                <graph string="Program Studi" type="bar">
+                    <field name="name" type="row"/>
+                </graph>
+            </field>
+        </record>
+</odoo>

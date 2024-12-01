@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_tracer_alumni_pengguna_user,pengguna_user,model_tracer_alumni_pengguna,base.group_user,1,1,1,0
+access_tracer_alumni_manager,pengguna_manager,model_tracer_alumni_pengguna,base.group_system,1,1,1,1
+access_fakultas_user,fakultas_user,model_tracer_alumni_fakultas,base.group_user,1,1,1,0
+access_prodi_user,prodi_user,model_tracer_alumni_prodi,base.group_user,1,1,1,0
+access_fakultas_manager,fakultas_manager,model_tracer_alumni_fakultas,base.group_system,1,1,1,1
+access_prodi_manager,prodi_manager,model_tracer_alumni_prodi,base.group_system,1,1,1,1

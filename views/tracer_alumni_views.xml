@@ -1,0 +1,125 @@
+<odoo>
+    <!-- Tree View for Pengguna -->
+    <record id="view_pengguna_tree" model="ir.ui.view">
+        <field name="name">pengguna.tree</field>
+        <field name="model">tracer_alumni.pengguna</field>
+        <field name="arch" type="xml">
+            <tree string="Pengguna Alumni">
+                <field name="name"/>
+                <field name="nim"/>
+                <field name="tahun_lulus"/>
+                <field name="email"/>
+                <field name="nomor_telepon"/>
+                <field name="fakultas_id"/>
+                <field name="prodi_id"/>
+                <field name="alamat_rumah"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View for Pengguna -->
+    <record id="view_pengguna_form" model="ir.ui.view">
+        <field name="name">pengguna.form</field>
+        <field name="model">tracer_alumni.pengguna</field>
+        <field name="arch" type="xml">
+            <form string="Pengguna Alumni">
+                <sheet>
+                    <group>
+                        <!-- Left Column -->
+                        <group>
+                            <field name="name" string="Nama" required="1"/>
+                            <field name="tahun_lulus" string="Tahun Lulus" required="1"/>
+                            <field name="email" string="Alamat Email (Email aktif)" required="1"/>
+                        </group>
+                        <!-- Right Column -->
+                        <group>
+                            <field name="nim" required="1"/>
+                            <field name="nomor_telepon" string="Nomor Telepon/HP (WA aktif)" required="1"/>
+                            <field name="alamat_rumah" string="Alamat Rumah" required="1"/>
+                        </group>
+                    </group>
+
+                    <!-- Fakultas and Prodi Section -->
+                    <group string="Informasi Akademik">
+                        <field name="fakultas_id" required="1"/>
+                        <field name="prodi_id" required="1"/>
+                    </group>
+
+                    <!-- Status Section -->
+                    <group string="Jelaskan Status Anda Saat Ini">
+                        <field name="status" widget="radio" required="1"/>
+                    </group>
+
+                    <!-- Fields Conditional Section -->
+                    <group string="Informasi Pekerjaan (Bekerja)" modifiers="{'invisible': [('status', '!=', 'bekerja')]}">
+                        <field name="kategori_instansi"/>
+                        <field name="nama_instansi"/>
+                        <field name="nama_atasan"/>
+                        <field name="email_atasan"/>
+                        <field name="no_telp_instansi"/>
+                        <field name="alamat_instansi"/>
+                        <field name="bidang_kerja"/>
+                    </group>
+
+                    <group string="Informasi Wiraswasta" modifiers="{'invisible': [('status', '!=', 'wiraswasta')]}">
+                        <field name="posisi_wiraswasta"/>
+                        <field name="bidang_usaha"/>
+                        <field name="status_usaha"/>
+                    </group>
+
+                    <group string="Informasi Pendidikan" modifiers="{'invisible': [('status', '!=', 'melanjutkan_pendidikan')]}">
+                        <field name="jenjang_pendidikan"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Kanban View for Pengguna -->
+    <record id="view_pengguna_kanban" model="ir.ui.view">
+        <field name="name">pengguna.kanban</field>
+        <field name="model">tracer_alumni.pengguna</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_small_column">
+                <field name="name"/>
+                <field name="nim"/>
+                <field name="email"/>
+                <field name="nomor_telepon"/>
+                <field name="tahun_lulus"/>
+                <field name="status"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click o_kanban_record #{kanban_color}">
+                            <div class="o_kanban_details">
+                                <strong><field name="name"/></strong>
+                                <div><field name="nim"/></div>
+                                <div><field name="tahun_lulus"/></div>
+                                <div><field name="email"/></div>
+                                <div><field name="nomor_telepon"/></div>
+                                <div><field name="status"/></div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Action to Open the Views -->
+    <record id="action_pengguna" model="ir.actions.act_window">
+        <field name="name">Pengguna Alumni</field>
+        <field name="res_model">tracer_alumni.pengguna</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Buat catatan baru untuk Pengguna Alumni
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu Items -->
+    <menuitem id="menu_tracer_alumni_root" name="Tracer Alumni" sequence="10"/>
+    <menuitem id="menu_pengguna" name="Pengguna Alumni" parent="menu_tracer_alumni_root"
+              action="action_pengguna" sequence="10"/>
+</odoo>
