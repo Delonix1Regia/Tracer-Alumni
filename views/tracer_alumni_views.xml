@@ -60,17 +60,61 @@
                         <field name="no_telp_instansi"/>
                         <field name="alamat_instansi"/>
                         <field name="bidang_kerja"/>
+                        <field name="status_usaha"/>
+                        <field name="waktu_tunggu"/>
+                        <field name="pendapatan"/>
+                        <field name="hubungan_prodi"/>
+                        <field name="pendidikan_sesuai"/>
+                        <field name="tingkat_etika"/>
+                        <field name="keahlian_bidang_ilmu"/>
+                        <field name="penguasaan_bahasa_asing"/>
+                        <field name="penguasaan_teknologi_informasi"/>
+                        <field name="kemampuan_berkomunikasi"/>
+                        <field name="kerjasama_tim"/>
+                        <field name="tingkat_pengembangan_diri"/>
+                        <field name="saran_kurikulum"/>
                     </group>
 
                     <group string="Informasi Wiraswasta" modifiers="{'invisible': [('status', '!=', 'wiraswasta')]}">
                         <field name="posisi_wiraswasta"/>
-                        <field name="bidang_usaha"/>
-                        <field name="status_usaha"/>
+                        <field name="tingkat_usaha"/>
+                        <field name="waktu_tunggu_kerja_pertama"/>
+                        <field name="rata_rata_pendapatan"/>
+                        <field name="hubungan_bidang_studi_pekerjaan"/>
+                        <field name="pendidikan_sesuai_pekerjaan"/>
+                        <field name="tingkat_etika"/>
+                        <field name="keahlian_bidang_ilmu"/>
+                        <field name="penguasaan_bahasa_asing"/>
+                        <field name="penguasaan_teknologi_informasi"/>
+                        <field name="kemampuan_berkomunikasi"/>
+                        <field name="kerjasama_tim"/>
+                        <field name="tingkat_pengembangan_diri"/>
+                        <field name="saran_kurikulum"/>
                     </group>
 
                     <group string="Informasi Pendidikan" modifiers="{'invisible': [('status', '!=', 'melanjutkan_pendidikan')]}">
                         <field name="jenjang_pendidikan"/>
+                        <field name="tingkat_etika"/>
+                        <field name="keahlian_bidang_ilmu"/>
+                        <field name="penguasaan_bahasa_asing"/>
+                        <field name="penguasaan_teknologi_informasi"/>
+                        <field name="kemampuan_berkomunikasi"/>
+                        <field name="kerjasama_tim"/>
+                        <field name="tingkat_pengembangan_diri"/>
+                        <field name="saran_kurikulum"/>
                     </group>
+
+                    <group string="Informasi Tidak Bekerja" modifiers="{'invisible': [('status', '!=', 'tidak_bekerja')]}">
+                        <field name="tingkat_etika"/>
+                        <field name="keahlian_bidang_ilmu"/>
+                        <field name="penguasaan_bahasa_asing"/>
+                        <field name="penguasaan_teknologi_informasi"/>
+                        <field name="kemampuan_berkomunikasi"/>
+                        <field name="kerjasama_tim"/>
+                        <field name="tingkat_pengembangan_diri"/>
+                        <field name="saran_kurikulum"/>
+                    </group>
+
                 </sheet>
             </form>
         </field>
